@@ -36,7 +36,7 @@
 // | ESC  |  Q  |  W  |  E  |  R  |  T  |      |  Y  |  U  |  I  |  O  |  P  | BKSP |
 // | TAB  |  A  |  S  |  D  |  F  |  G  |      |  H  |  J  |  K  |  L  |  ⬆  | ENTR |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |      |  N  |  M  |  <, |  ⬅ |  ⬇  |  ⮕  |
-//                    | CTRL |NUMROW| SPACE |  | SPACE |   | FROW |
+//                  | CTRL | FROW | SPACE |  | SPACE |NUMROW|      |
 //
                 gaming_layer {
                         label = "GAMING";
@@ -44,7 +44,7 @@
    &kp ESC  &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I    &kp O   &kp P    &kp BKSP
    &kp TAB  &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K    &kp L   &kp UP &kp ENTER
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp LEFT &kp DOWN &kp RIGHT
-               &kp LCTL &mo NUMROW &kp SPC    &kp SPC &none &mo FROW
+               &kp LCTL &mo FROW &kp SPC    &kp SPC &mo NUMROW &none
                         >;
                 };
 
@@ -74,8 +74,8 @@
 //
                 arrows_layer {
                         label = "ARROWS";
-                        bindings = < 
-   &kp ESC     &none &none &kp INS &kp HOME &kp PG_UP       &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS &kp KP_MULTIPLY &kp BSPC
+                        bindings = <
+   &kp ESC     &none &none &kp INSERT &kp HOME &kp PG_UP       &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS &kp KP_MULTIPLY &kp BSPC
    &kp CAPS &none &none &kp DEL &kp END &kp PG_DN   &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &kp UP &kp ENTER
    &kp LCTRL &none &none &none &none &none       &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp LEFT &kp DOWN &kp RIGHT
               &kp LGUI  &kp LALT  &mt LSHIFT SPACE              &kp KP_N0 &none &tog ARROWS
@@ -120,7 +120,7 @@
 // -----------------------------------------------------------------------------------------
 // |BT_CLR| BT 0 | BT 1 | BT 2 | BT 3 | BT 4 |      |     |      |     |     |     | RESET|
 // |      |      |      |      |      |      |      |     |      |     |     |     |      |
-// |      |      |      |      |      |      |      |     |      |     |     |     |      |
+// |      |      |      |      |      |      |      |     |      |     |     |     |PRNTSC|
 //                      |      |GAMING|        |  |       |      |     |
 //
                 config_layer {
@@ -128,7 +128,7 @@
                         bindings = <
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &none &none &none &none &none &sys_reset 
    &none &none &none &none &none &none                                             &none &none &none &none &none &none
-   &none &none &none &none &none &none                                             &none &none &none &none &none &none
+   &none &none &none &none &none &none                                             &none &none &none &none &none &kp PRINTSCREEN
                    &none &tog GAMING &none                                                 &none &none &none
                         >;
                 };
