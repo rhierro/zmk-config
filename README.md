@@ -11,7 +11,11 @@
 
 ### Links
 [Official LOWPROKB GH](https://github.com/LOWPROKB/zmk-config-Corne-ish-Zen)
+
 [Official Corne-ish Zen support page](https://lowprokb.ca/pages/corne-ish-zen-support)
+
 [PDF of keyboard's physical layout](https://cdn.shopify.com/s/files/1/0523/0847/6068/files/Corne-sih_Zen_physical_layout.pdf?v=1628978254)
+
 [PDF of keyboard screen iconography](https://cdn.shopify.com/s/files/1/0523/0847/6068/files/Corne-ish_Zen_Display_Iconography.pdf?v=1628984746)
+
 [Additional improvements courtesy of caksoylar](https://gist.github.com/caksoylar/c411313990978e1903c244f03039187a)
