@@ -4,11 +4,13 @@
 
 #define DEFAULT 0
 #define GAMING 1
-#define NUMROW 2
-#define ARROWS 3
-#define FROW 4
-#define LIMBO 5
-#define CONFIG 6
+#define LEAGUE 2
+#define NUMROW 3
+#define ARROWS 4
+#define FROW 5
+#define LIMBO 6
+#define CONFIG 7
+#define PICK 8
 
 / {
         keymap {
@@ -36,7 +38,7 @@
 // | ESC  |  Q  |  W  |  E  |  R  |  T  |      |  Y  |  U  |  I  |  O  |  P  | BKSP |
 // | TAB  |  A  |  S  |  D  |  F  |  G  |      |  H  |  J  |  K  |  L  |  ⬆  | ENTR |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |      |  N  |  M  |  <, |  ⬅ |  ⬇  |  ⮕  |
-//                  | CTRL | FROW | SPACE |  | SPACE |NUMROW|      |
+//                  | NUMROW | CTRL | SPACE |  | SPACE |     | PICK |
 //
                 gaming_layer {
                         label = "GAMING";
@@ -44,23 +46,38 @@
    &kp ESC  &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I    &kp O   &kp P    &kp BKSP
    &kp TAB  &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K    &kp L   &kp UP &kp ENTER
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp LEFT &kp DOWN &kp RIGHT
-               &kp LCTL &mo FROW &kp SPC    &kp SPC &mo NUMROW &none
+               &kp NUMROW &kp CTRL &kp SPC    &kp SPC &none &mo PICK
                         >;
                 };
 
+// -----------------------------------------------------------------------------------------
+// | ESC  |  Q  |  W  |  E  |  R  |  T  |      |  Y  |  U  |  I  |  O  |  P  | BKSP |
+// | TAB  |  A  |  S  |  D  |  F  |  G  |      |  H  |  J  |  K  |  L  |  ⬆  | ENTR |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |      |  N  |  M  |  <, |  ⬅ |  ⬇  |  ⮕  |
+//                   |NUMROW| ALT | SPACE |  | SPACE |     | PICK |
+//
+                league_layer {
+                        label = "LEAGUE";
+                        bindings = <
+   &kp ESC  &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I    &kp O   &kp P    &kp BKSP
+   &kp TAB  &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K    &kp L   &kp UP &kp ENTER
+   &kp CTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp LEFT &kp DOWN &kp RIGHT
+               &mo NUMROW &kp LALT &kp SPC    &kp SPC &none &mo PICK
+                        >;
+                };
 
 // -----------------------------------------------------------------------------------------
 // | ESC  |  1! |  2@ |  3# |  4$ |  5% |      |  6^ |  7& |  8* | 9(  | 0)  | BKSP |
-// | TAB  |     |     |     |     |     |      | -_  |  =+ |     | [{  | ]}  |  \|  |
-// | CTRL |     |     |     |     |     |      |     |     |     |     |     | ENTR |
+// | TAB  |     |     |     |     |VOLUP|      | -_  |  =+ |     | [{  | ]}  |  \|  |
+// | CTRL |     |PREV|PLY/PSE|NEXT|VOLDN|      |     |     |     |     |     | ENTR |
 //                    | GUI | ALT | SHIFT/SPC |  | SPACE | NUMROW | FROW |
 //
                 numrow_layer {
                         label = "NUMROW";
                         bindings = <
    &kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
-   &kp TAB   &none  &none  &none  &none  &none       &kp MINUS &kp EQUAL &none &kp LBKT &kp RBKT &kp BSLH
-   &kp LCTRL &none  &none  &none  &none  &none       &none  &none  &none  &none  &none  &kp ENTER 
+   &kp TAB   &none  &none  &none  &none  &kp C_VOLUME_UP       &kp MINUS &kp EQUAL &none &kp LBKT &kp RBKT &kp BSLH
+   &kp LCTRL &none  &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_VOLUME_DOWN       &none  &none  &none  &none  &none  &kp ENTER 
                 &kp LGUI  &kp LALT &mt LSHIFT SPACE   &kp SPACE &tog NUMROW &mo FROW
                         >;
                 };
@@ -70,7 +87,7 @@
 // | ESC  |     |     | INS |HOME |PGUP |      |  7  |  8  |  9  |  -  |  *  | BKSP |
 // | CAPS |     |     | DEL | END |PGDN |      |  4  |  5  |  6  |  +  |  ⬆  | ENTR |
 // | CTRL |     |     |     |     |     |      |  1  |  2  |  3  |  ⬅ |  ⬇  |  ⮕  |
-//                    | GUI | ALT | SHIFT/SPC |  |   |  0  | ARROWS |
+//                    | GUI | ALT | SHIFT/SPC |  |   |  0  |     |
 //
                 arrows_layer {
                         label = "ARROWS";
@@ -121,7 +138,7 @@
 // |BT_CLR| BT 0 | BT 1 | BT 2 | BT 3 | BT 4 |      |     |      |     |     |     | RESET|
 // |      |      |      |      |      |      |      |     |      |     |     |     |      |
 // |      |      |      |      |      |      |      |     |      |     |     |     |PRNTSC|
-//                      |      |GAMING|        |  |       |      |     |
+//                      |      | PICK |        |  |       |      |     |
 //
                 config_layer {
                         label = "CONFIG";
@@ -129,7 +146,23 @@
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &none &none &none &none &none &sys_reset 
    &none &none &none &none &none &none                                             &none &none &none &none &none &none
    &none &none &none &none &none &none                                             &none &none &none &none &none &kp PRINTSCREEN
-                   &none &tog GAMING &none                                                 &none &none &none
+                   &none &tog PICK &none                                                 &none &none &none
+                        >;
+                };
+
+// -----------------------------------------------------------------------------------------
+// |GAMING|LEAGUE|VALOR |MAPLE |      |      |      |     |      |     |     |     |      |
+// |      |      |      |      |      |      |      |     |      |     |     |     |      |
+// |      |      |      |      |      |      |      |     |      |     |     |     |      |
+//                      |      |DEFAULT|        |  |       |      |     |
+//
+                pick_layer {
+                        label = "PICK";
+                        bindings = <
+   &to GAMING &to LEAGUE &none &none &none &none     &none &none &none &none &none &none 
+   &none &none &none &none &none &none                                             &none &none &none &none &none &none
+   &none &none &none &none &none &none                                             &none &none &none &none &none &none
+                   &none &to DEFAULT &none                                                 &none &none &none
                         >;
                 };
         };
