@@ -46,7 +46,7 @@
    &kp ESC  &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I    &kp O   &kp P    &kp BKSP
    &kp TAB  &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K    &kp L   &kp UP &kp ENTER
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp LEFT &kp DOWN &kp RIGHT
-               &mo NUMROW &kp LCTL &kp SPC    &kp SPC &none &mo PICK
+               &mo NUMROW &kp LCTRL &kp SPC    &kp SPC &none &mo PICK
                         >;
                 };
 
@@ -61,7 +61,7 @@
                         bindings = <
    &kp ESC  &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I    &kp O   &kp P    &kp BKSP
    &kp TAB  &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K    &kp L   &kp UP &kp ENTER
-   &kp CTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp LEFT &kp DOWN &kp RIGHT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp LEFT &kp DOWN &kp RIGHT
                &mo NUMROW &kp LALT &kp SPC    &kp SPC &none &mo PICK
                         >;
                 };
